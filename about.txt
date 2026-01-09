@@ -1,0 +1,4 @@
+name "Democracy in Crysis"
+author "EndlessSkyEnthusiast"
+version "0.1.0"
+description "Alternative Missions string to become part of the Federation instead of the Free Worlds"
