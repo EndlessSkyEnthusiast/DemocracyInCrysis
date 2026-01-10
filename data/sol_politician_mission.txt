@@ -1,0 +1,25 @@
+mission "Sol: Urgent Councilor"
+	landing
+	name "Direct Course to Sol"
+	description "Carry Councilor Ilya Taranenko directly to <planet>. The deadline is <date>."
+	source "New Boston"
+	destination "Earth"
+	passengers 1
+	deadline 1.5
+	payment 18000
+	blocked "You need a free bunk to take Ilya Taranenko aboard."
+	to offer
+		random 50
+		not "sol councilor urgent: done"
+	on offer
+		conversation
+			`In the spaceport lounge, a man in a rumpled suit stares at his datapad. When he notices you, he straightens.`
+			`\t"Captain?" He hesitates, and you can hear the fatigue in his voice. "I'm Ilya Taranenko, a councilor from the Inner Worlds. My transport to Sol has been delayed, and I need a direct flight today. Detours are a political luxury I can't afford."`
+			`\tHe sizes up your ship as if already doing the math. "I'll pay in cash. I just need a bunk and your discretion. Take me straight to Earth, as fast as you can."`
+			choice
+				`\t"Get aboard. We'll depart immediately."`
+					accept
+				`\t"That's too tight. Find someone else."`
+	on complete
+		set "sol councilor urgent: done"
+		dialog `Taranenko exhales as you set down in Earth's spaceport. "Finally, Sol," he murmurs. He presses the agreed payment into your hand. "You have no idea how many heads you just spared me. Safe travels, Captain."`
