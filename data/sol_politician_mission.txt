@@ -14,7 +14,7 @@ mission "Sol: Urgent Councilor 1"
 	deadline 3
 	blocked "You need a free bunk to take Ilya Taranenko aboard."
 	to offer
-		random 50
+		random < 50
 		not "sol councilor urgent: done"
 	on offer
 		conversation
@@ -51,7 +51,7 @@ mission "Sol: Urgent Councilor 2"
 	deadline 4
 	blocked "You need a free bunk to take Ilya Taranenko aboard."
 	to offer
-		random 50
+		random < 50
 		not "sol councilor urgent: done"
 	on offer
 		conversation
@@ -92,7 +92,7 @@ mission "Sol: Urgent Councilor 3"
 	deadline 5
 	blocked "You need a free bunk to take Ilya Taranenko aboard."
 	to offer
-		random 50
+		random < 50
 		not "sol councilor urgent: done"
 	on offer
 		conversation
