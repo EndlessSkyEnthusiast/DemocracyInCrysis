@@ -27,7 +27,7 @@ mission "Sol: Urgent Councilor 1"
 				`"That's too tight. Find someone else."`
 	on complete
 		payment 50000
-		"reputation: Federation" = 1
+		"reputation: Republic" >?= 1
 		set "sol councilor urgent: done"
 		dialog `Taranenko exhales as you set down in Earth's spaceport. "Just in time for the vote," he says, already moving toward the exit. He presses the agreed payment into your hand. "You were reliable today. I will need a quick ride to the Dirt Belt to meet with some locals. If you want to take me, I will meet you later today at the spaceport."`
 
@@ -64,7 +64,7 @@ mission "Sol: Urgent Councilor 2"
 				`"That's too tight. Find someone else."`
 	on complete
 		payment 50000
-		"reputation: Federation" = 1
+		"reputation: Republic" >?= 1
 		set "sol councilor urgent: done"
 		dialog `Taranenko exhales as you set down in Earth's spaceport. "Just in time for the vote," he says, already moving toward the exit. He presses the agreed payment into your hand. "You were reliable today. I will need a quick ride to the Dirt Belt to meet with some locals. If you want to take me, I will meet you later today at the spaceport."`
 
@@ -105,6 +105,6 @@ mission "Sol: Urgent Councilor 3"
 				`"That's too tight. Find someone else."`
 	on complete
 		payment 50000
-		"reputation: Federation" = 1
+		"reputation: Republic" >?= 1
 		set "sol councilor urgent: done"
 		dialog `Taranenko exhales as you set down in Earth's spaceport. "Just in time for the vote," he says, already moving toward the exit. He presses the agreed payment into your hand. "You were reliable today. I will need a quick ride to the Dirt Belt to meet with some locals. If you want to take me, I will meet you later today at the spaceport."`
