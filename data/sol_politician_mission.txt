@@ -1,0 +1,357 @@
+mission "Sol: Urgent Parliament Member 1"
+	landing
+	name "Parliament Member to Sol"
+	description "Carry Parliament Member Ilya Taranenko directly to <planet>. The deadline is <date>."
+	source
+		system "Alpha Centauri"
+		system "Altair"
+		system "Caph"
+		system "Denebola"
+		system "Sirius"
+		system "Vega"
+	destination "Earth"
+	passengers 1
+	deadline 3
+	blocked "You need a free bunk to take Parliament Member Ilya Taranenko aboard."
+	to offer
+		random < 50
+		not "sol parliament urgent: done"
+	on offer
+		conversation
+			`In the spaceport lounge, a man in a rumpled suit stares at his datapad. When he notices you, he straightens.`
+			`"Captain?" He hesitates, and you can hear the fatigue in his voice. "I'm Ilya Taranenko, a member of Parliament from the Inner Worlds. My transport to Sol has been delayed, and I have to be there in person for a floor vote in <date> days. Detours are a political luxury I can't afford."`
+			`He sizes up your ship as if already doing the math. "I'll pay in cash. I just need a bunk and your discretion. Take me straight to Earth, as fast as you can."`
+			choice
+				`"Get aboard. We'll depart immediately."`
+					accept
+				`"That's too tight. Find someone else."`
+	on complete
+		payment 50000
+		set "sol parliament followup window"
+		event "sol parliament followup expired" 2
+		"reputation: Republic" >?= 1
+		set "sol parliament urgent: done"
+		dialog `Taranenko exhales as you set down in Earth's spaceport. "Just in time for the vote," he says, already moving toward the exit. He presses the agreed payment into your hand. "You were reliable today. I will need a quick ride to the Dirt Belt to meet with some locals. If you want to take me, I will meet you later today at the spaceport."`
+
+
+mission "Sol: Urgent Parliament Member 2"
+	landing
+	name "Parliament Member to Sol"
+	description "Carry Parliament Member Ilya Taranenko directly to <planet>. The deadline is <date>."
+	source
+		system "Delta Capricorni"
+		system "Diphda"
+		system "Eteron"
+		system "Fingol"
+		system "Fomalhaut"
+		system "Menkent"
+		system "Merak"
+		system "Nocte"
+		system "Procyon"
+	destination "Earth"
+	passengers 1
+	deadline 4
+	blocked "You need a free bunk to take Parliament Member Ilya Taranenko aboard."
+	to offer
+		random < 50
+		not "sol parliament urgent: done"
+	on offer
+		conversation
+			`In the spaceport lounge, a man in a rumpled suit stares at his datapad. When he notices you, he straightens.`
+			`"Captain?" He hesitates, and you can hear the fatigue in his voice. "I'm Ilya Taranenko, a member of Parliament from the Inner Worlds. My transport to Sol has been delayed, and I have to be there in person for a floor vote in <date> days. Detours are a political luxury I can't afford."`
+			`He sizes up your ship as if already doing the math. "I'll pay in cash. I just need a bunk and your discretion. Take me straight to Earth, as fast as you can."`
+			choice
+				`"Get aboard. We'll depart immediately."`
+					accept
+				`"That's too tight. Find someone else."`
+	on complete
+		payment 50000
+		set "sol parliament followup window"
+		event "sol parliament followup expired" 2
+		"reputation: Republic" >?= 1
+		set "sol parliament urgent: done"
+		dialog `Taranenko exhales as you set down in Earth's spaceport. "Just in time for the vote," he says, already moving toward the exit. He presses the agreed payment into your hand. "You were reliable today. I will need a quick ride to the Dirt Belt to meet with some locals. If you want to take me, I will meet you later today at the spaceport."`
+
+
+mission "Sol: Urgent Parliament Member 3"
+	landing
+	name "Parliament Member to Sol"
+	description "Carry Parliament Member Ilya Taranenko directly to <planet>. The deadline is <date>."
+	source
+		system "Acamar"
+		system "Alderamin"
+		system "Ankaa"
+		system "Capella"
+		system "Cebalrai"
+		system "Markab"
+		system "Muphrid"
+		system "Phecda"
+		system "Pollux"
+		system "Porrima"
+		system "Regulus"
+		system "Rutilicus"
+		system "Scheat"
+	destination "Earth"
+	passengers 1
+	deadline 5
+	blocked "You need a free bunk to take Parliament Member Ilya Taranenko aboard."
+	to offer
+		random < 50
+		not "sol parliament urgent: done"
+	on offer
+		conversation
+			`In the spaceport lounge, a man in a rumpled suit stares at his datapad. When he notices you, he straightens.`
+			`"Captain?" He hesitates, and you can hear the fatigue in his voice. "I'm Ilya Taranenko, a member of Parliament from the Inner Worlds. My transport to Sol has been delayed, and I have to be there in person for a floor vote in <date> days. Detours are a political luxury I can't afford."`
+			`He sizes up your ship as if already doing the math. "I'll pay in cash. I just need a bunk and your discretion. Take me straight to Earth, as fast as you can."`
+			choice
+				`"Get aboard. We'll depart immediately."`
+					accept
+				`"That's too tight. Find someone else."`
+	on complete
+		payment 50000
+		set "sol parliament followup window"
+		event "sol parliament followup expired" 2
+		"reputation: Republic" >?= 1
+		set "sol parliament urgent: done"
+		dialog `Taranenko exhales as you set down in Earth's spaceport. "Just in time for the vote," he says, already moving toward the exit. He presses the agreed payment into your hand. "You were reliable today. I will need a quick ride to the Dirt Belt to meet with some locals. If you want to take me, I will meet you later today at the spaceport."`
+
+
+mission "Sol: Parliament Member Follow-up"
+	priority
+	name "Parliament Recall"
+	description "Transport Parliament Member Ilya Taranenko to <planet> to regroup after a failed vote. The deadline is <date>."
+	source "Earth"
+	destination "Deep"
+	passengers 1
+	deadline 12
+	blocked "You need a free bunk to take Parliament Member Ilya Taranenko aboard."
+	to offer
+		has "sol parliament urgent: done"
+		has "sol parliament followup window"
+		not "sol parliament followup: done"
+	on offer
+		conversation
+			`You find Taranenko waiting near the spaceport concourse, his datapad dark and his expression brittle.`
+			`"The vote failed," he says, not wasting words. "I need to go to Deep in the Kornephoros system and speak with the locals before Parliament decides what comes next. Can you take me?"`
+			`"It has to be direct," he adds. "Every day matters now."`
+			choice
+				`"I'm ready. Let's go."`
+					accept
+				`"Not this time."`
+	on complete
+		payment 90000
+		"reputation: Republic" >?= 2
+		set "sol parliament followup: done"
+		dialog `On Deep, Taranenko steps onto the dock and looks back once. "You've earned your keep, Captain. I'll put you on the whitelist for Parliament member transport."`
+
+
+mission "DIC Job: Parliament Member to Sol 1"
+	job
+	name "Parliament Member to Sol"
+	description "Rush a Parliament member to <planet>. The deadline is <date>."
+	source
+		system "Alpha Centauri"
+		system "Altair"
+		system "Caph"
+		system "Denebola"
+		system "Sirius"
+		system "Vega"
+	destination "Earth"
+	passengers 1
+	deadline 3
+	blocked "You need a free bunk for your passenger."
+	to offer
+		has "sol parliament followup: done"
+		random < 50
+	on offer
+		conversation
+			`A Parliament aide flags you down. "We need a rush transport to Sol. No delays."`
+			choice
+				`"Understood. We'll depart immediately."`
+					accept
+				`"Not today."`
+	on complete
+		payment 40000
+		"reputation: Republic" >?= 1
+		dialog `Your passenger thanks you briskly before disappearing into the crowd.`
+
+
+mission "DIC Job: Parliament Member to Sol 2"
+	job
+	name "Parliament Member to Sol"
+	description "Rush a Parliament member to <planet>. The deadline is <date>."
+	source
+		system "Delta Capricorni"
+		system "Diphda"
+		system "Eteron"
+		system "Fingol"
+		system "Fomalhaut"
+		system "Menkent"
+		system "Merak"
+		system "Nocte"
+		system "Procyon"
+	destination "Earth"
+	passengers 1
+	deadline 4
+	blocked "You need a free bunk for your passenger."
+	to offer
+		has "sol parliament followup: done"
+		random < 50
+	on offer
+		conversation
+			`A Parliament aide flags you down. "We need a rush transport to Sol. No delays."`
+			choice
+				`"Understood. We'll depart immediately."`
+					accept
+				`"Not today."`
+	on complete
+		payment 70000
+		"reputation: Republic" >?= 1
+		dialog `Your passenger thanks you briskly before disappearing into the crowd.`
+
+
+mission "DIC Job: Parliament Member to Sol 3"
+	job
+	name "Parliament Member to Sol"
+	description "Rush a Parliament member to <planet>. The deadline is <date>."
+	source
+		system "Acamar"
+		system "Alderamin"
+		system "Ankaa"
+		system "Capella"
+		system "Cebalrai"
+		system "Markab"
+		system "Muphrid"
+		system "Phecda"
+		system "Pollux"
+		system "Porrima"
+		system "Regulus"
+		system "Rutilicus"
+		system "Scheat"
+	destination "Earth"
+	passengers 1
+	deadline 5
+	blocked "You need a free bunk for your passenger."
+	to offer
+		has "sol parliament followup: done"
+		random < 50
+	on offer
+		conversation
+			`A Parliament aide flags you down. "We need a rush transport to Sol. No delays."`
+			choice
+				`"Understood. We'll depart immediately."`
+					accept
+				`"Not today."`
+	on complete
+		payment 100000
+		"reputation: Republic" >?= 1
+		dialog `Your passenger thanks you briskly before disappearing into the crowd.`
+
+
+mission "DIC Job: Parliament Member Home 1"
+	job
+	name "Parliament Member Home"
+	description "Transport a Parliament member from Sol to <planet>. The deadline is <date>."
+	source "Earth"
+	destination
+		system "Alpha Centauri"
+		system "Altair"
+		system "Caph"
+		system "Denebola"
+		system "Sirius"
+		system "Vega"
+	passengers 1
+	deadline 6
+	blocked "You need a free bunk for your passenger."
+	to offer
+		has "sol parliament followup: done"
+		random < 50
+	on offer
+		conversation
+			`A Parliament member needs a ride home from Sol. "I'm not in a rush, but don't dawdle," they say.`
+			choice
+				`"I'll get you there."`
+					accept
+				`"Not today."`
+	on complete
+		payment 40000
+		"reputation: Republic" >?= 1
+		dialog `They thank you politely and head for the exit.`
+
+
+mission "DIC Job: Parliament Member Home 2"
+	job
+	name "Parliament Member Home"
+	description "Transport a Parliament member from Sol to <planet>. The deadline is <date>."
+	source "Earth"
+	destination
+		system "Delta Capricorni"
+		system "Diphda"
+		system "Eteron"
+		system "Fingol"
+		system "Fomalhaut"
+		system "Menkent"
+		system "Merak"
+		system "Nocte"
+		system "Procyon"
+	passengers 1
+	deadline 7
+	blocked "You need a free bunk for your passenger."
+	to offer
+		has "sol parliament followup: done"
+		random < 50
+	on offer
+		conversation
+			`A Parliament member needs a ride home from Sol. "I'm not in a rush, but don't dawdle," they say.`
+			choice
+				`"I'll get you there."`
+					accept
+				`"Not today."`
+	on complete
+		payment 70000
+		"reputation: Republic" >?= 1
+		dialog `They thank you politely and head for the exit.`
+
+
+mission "DIC Job: Parliament Member Home 3"
+	job
+	name "Parliament Member Home"
+	description "Transport a Parliament member from Sol to <planet>. The deadline is <date>."
+	source "Earth"
+	destination
+		system "Acamar"
+		system "Alderamin"
+		system "Ankaa"
+		system "Capella"
+		system "Cebalrai"
+		system "Markab"
+		system "Muphrid"
+		system "Phecda"
+		system "Pollux"
+		system "Porrima"
+		system "Regulus"
+		system "Rutilicus"
+		system "Scheat"
+	passengers 1
+	deadline 8
+	blocked "You need a free bunk for your passenger."
+	to offer
+		has "sol parliament followup: done"
+		random < 50
+	on offer
+		conversation
+			`A Parliament member needs a ride home from Sol. "I'm not in a rush, but don't dawdle," they say.`
+			choice
+				`"I'll get you there."`
+					accept
+				`"Not today."`
+	on complete
+		payment 100000
+		"reputation: Republic" >?= 1
+		dialog `They thank you politely and head for the exit.`
+
+
+event "sol parliament followup window"
+
+event "sol parliament followup expired"
+	clear "sol parliament followup window"
